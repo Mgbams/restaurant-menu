@@ -5,13 +5,13 @@ import { Link, useParams } from "react-router-dom";
 const Menu = ({ id, title, category, price, img, desc }) => {
   return (
     <div id="menu-wrapper">
-      <div className="image-div">
+      <div className="image-div rounded">
         <img src={img} alt={title} />
       </div>
       <div className="food-contents-div">
         <div className="tittle-price-container">
           <h4>{title}</h4>
-          <span>$ {price}</span>
+          <span className="price">$ {price}</span>
         </div>
         <div>
           <span>{desc}</span>
