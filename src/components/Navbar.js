@@ -7,7 +7,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ filterCategory }) => {
   return (
     <div
       style={{
@@ -17,13 +17,13 @@ const Navbar = () => {
       }}
     >
       <nav
-        class="navbar navbar-expand-lg navbar-light bg-light"
+        className="navbar navbar-expand-lg"
         style={{
           width: "50vw",
         }}
       >
         <div
-          class="collapse navbar-collapse"
+          className="collapse navbar-collapse"
           id="navbarNav"
           style={{
             display: "flex",
@@ -31,30 +31,21 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <Link to="/" class="nav-link">
-                {" "}
-                All <span class="sr-only">(current)</span>
-              </Link>
+          <ul className="navbar-nav">
+            <li>
+              <button onClick={() => filterCategory("all")}>All</button>
             </li>
-            <li class="nav-item">
-              <Link to="/" class="nav-link">
+            <li>
+              <button onClick={() => filterCategory("breakfast")}>
                 {" "}
                 Breakfast
-              </Link>
+              </button>
             </li>
-            <li class="nav-item">
-              <Link to="/" class="nav-link">
-                {" "}
-                Lunch
-              </Link>
+            <li>
+              <button onClick={() => filterCategory("lunch")}>Lunch</button>
             </li>
-            <li class="nav-item">
-              <Link to="/" class="nav-link">
-                {" "}
-                Shakes
-              </Link>
+            <li>
+              <button onClick={() => filterCategory("shakes")}> Shakes</button>
             </li>
           </ul>
         </div>
